@@ -1,16 +1,16 @@
 pipeline {
     agent any
     
-//     tools {
-//         maven 'Maven-3.9.2'
-//     }
+    tools {
+        maven 'maven'
+    }
     
     stages {
         stage('Build') {
             steps {
                 echo 'buiding the application...'
-//                 sh './maven -v'
-                sh './ry.sh'
+                sh 'mvn install'
+//                 sh './ry.sh'
             }
         }
         
